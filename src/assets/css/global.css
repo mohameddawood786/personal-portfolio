@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0014;
+  color: #ded6eb;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.section {
+  padding: 50px 40px;
+  min-height: 80vh;
+}

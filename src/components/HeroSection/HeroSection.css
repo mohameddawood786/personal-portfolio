@@ -1,0 +1,355 @@
+/* Wrapper for Vanta + content */
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Vanta background canvas */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left, .hero-right {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-left {
+  flex: 0.5;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.hero-left h3 {
+  font-size: 2rem;
+  color: #bf9eff;
+  margin-bottom: 10px;
+}
+
+.hero-left h1 {
+  font-size: 4rem;
+  margin: 0 0 20px;
+  color: #fff;
+}
+
+.typing-text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #ded6eb;
+}
+
+.hire-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #bf9eff, #ff5ebc);
+  color: #0a0014;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 20px;
+  width: fit-content;
+  font-weight: 600;
+}
+
+.hire-btn:hover {
+  transform: scale(1.05);
+}
+
+.social-icons {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: #d0bfeb;
+  font-size: 1.8rem;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #b490fd;
+  transform: translateY(-4px);
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInRight 1s ease forwards;
+}
+
+.hero-right img {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  border: 4px solid #8648d8;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(191, 158, 255, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-right img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 30px rgba(191, 158, 255, 0.6);
+}
+
+.hero-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(191, 158, 255, 0.06) 0%, rgba(10, 0, 20, 0.95) 100%);
+  z-index: 0;
+  pointer-events: none;
+  animation: gradientPulse 10s ease-in-out infinite;
+}
+
+@keyframes gradientPulse {
+  0% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 52% 48%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background: #060014;
+}
+
+/* Layer 1: largest, slowest moving + opacity pulse */
+.stars {
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(1px 1px, rgba(255, 94, 188, 0.333) 70%, transparent 71%);
+  background-size: 3px 3px;
+  animation:
+    moveStars 120s linear infinite,
+    pulseOpacity 8s ease-in-out infinite alternate;
+  opacity: 0.18;
+}
+
+/* Layer 2: medium, faster + scale breathing */
+.stars2 {
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(1px 1px, rgba(255, 94, 188, 0.108) 70%, transparent 71%);
+  background-size: 2px 2px;
+  animation:
+    moveStars2 90s linear infinite,
+    scaleWarp 16s ease-in-out infinite alternate;
+  opacity: 0.15;
+}
+
+/* Layer 3: smallest, fastest, flickering */
+.stars3 {
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(1px 1px, rgba(255, 255, 255, 0.25) 70%, transparent 71%);
+  background-size: 1.5px 1.5px;
+  animation:
+    moveStars3 60s linear infinite,
+    flicker 4s ease-in-out infinite alternate;
+  opacity: 0.1;
+}
+
+/* Movement keyframes (already present) */
+@keyframes moveStars {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-600px, -300px, 0); }
+}
+
+@keyframes moveStars2 {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-400px, -200px, 0); }
+}
+
+@keyframes moveStars3 {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-300px, -150px, 0); }
+}
+
+/* NEW: Opacity pulse */
+@keyframes pulseOpacity {
+  0% { opacity: 0.18; }
+  50% { opacity: 0.23; }
+  100% { opacity: 0.18; }
+}
+
+/* NEW: Scale warping */
+@keyframes scaleWarp {
+  0% { transform: scale(1) translate3d(0, 0, 0); }
+  50% { transform: scale(1.03) translate3d(-200px, -100px, 0); }
+  100% { transform: scale(1) translate3d(0, 0, 0); }
+}
+
+/* NEW: Flicker animation */
+@keyframes flicker {
+  0% { opacity: 0.1; }
+  25% { opacity: 0.15; }
+  50% { opacity: 0.12; }
+  75% { opacity: 0.18; }
+  100% { opacity: 0.1; }
+}
+
+/* Existing styles unchanged above here */
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px; /* reduce horizontal padding */
+    text-align: center;
+    height: auto;
+  }
+
+  .hero-left, .hero-right {
+    flex: unset;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-left h3, .hero-left h1 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-left h3 {
+    font-size: 1.8rem;
+  }
+
+  .hero-left h1 {
+    font-size: 3rem;
+  }
+
+  .typing-text {
+    font-size: 1.3rem;
+  }
+
+  .hero-right img {
+    width: 350px;
+    height: 350px;
+    margin-top: 30px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 480px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 16px; /* reduce padding for mobiles */
+    text-align: center;
+    height: auto;
+  }
+
+  .hero-left, .hero-right {
+    flex: unset;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-left h3, .hero-left h1 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-left h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero-left h1 {
+    font-size: 2.3rem;
+  }
+
+  .typing-text {
+    font-size: 1.1rem;
+  }
+
+  .hire-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .hero-right img {
+    width: 250px;
+    height: 250px;
+    margin-top: 25px;
+  }
+
+  .social-icons {
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .social-icons a {
+    font-size: 1.5rem;
+  }
+}

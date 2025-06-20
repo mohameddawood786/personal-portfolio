@@ -1,0 +1,300 @@
+.education-section {
+  background: #19121e;
+  color: white;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.education-title span {
+  color: #b877f7;
+}
+
+.education-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.education-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #1c0b5d;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.education-item {
+  width: 50%;
+  padding: 20px 30px;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.education-item.left {
+  left: 0%;
+  text-align: right;
+}
+
+.education-item.right {
+  left: 50.5%;
+  text-align: left;
+}
+
+.education-icon {
+  position: absolute;
+  top: 22px;
+  width: 22px;
+  height: 22px;
+  background: #1c0b5d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.education-item.left .education-icon {
+  right: -13px;
+}
+
+.education-item.right .education-icon {
+  left: -13px;
+}
+
+.education-content {
+  background: #ef9c34;
+  border-radius: 8px;
+  padding: 16px 20px;
+  position: relative;
+  display: inline-block;
+  max-width: 90%;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.education-content h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+}
+
+.education-content p {
+  margin: 6px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2a2a2a;
+}
+
+.education-date {
+  font-size: 12px;
+  display: block;
+  margin-top: 6px;
+  color: #111;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .education-line {
+    left: 20px;
+  }
+
+  .education-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 20px;
+    text-align: left;
+    left: 0;
+  }
+
+  .education-item.left,
+  .education-item.right {
+    left: 0;
+    text-align: left;
+  }
+
+  .education-icon {
+    left: 8px;
+    top: 22px;
+  }
+
+  .education-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .education-title {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .education-icon {
+    width: 18px;
+    height: 18px;
+    left: 6px;
+    top: 20px;
+  }
+
+  .education-content h3 {
+    font-size: 16px;
+  }
+
+  .education-content p {
+    font-size: 13px;
+  }
+
+  .education-date {
+    font-size: 11px;
+  }
+}
+/* same base styles you have — and add this */
+
+.education-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.education-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* For left-right distinction on desktop */
+.education-item.left.visible {
+  transform: translateX(-30px);
+}
+
+.education-item.right.visible {
+  transform: translateX(30px);
+}
+
+@media (max-width: 768px) {
+  .education-item.left.visible,
+  .education-item.right.visible {
+    transform: translateY(0);
+  }
+}
+/* Existing styles stay as is above */
+
+/* Medium screens (768px–992px) already handled well */
+
+@media (max-width: 768px) {
+  .education-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .education-item {
+    padding-left: 45px;
+    padding-right: 16px;
+  }
+
+  .education-icon {
+    width: 16px;
+    height: 16px;
+    left: 6px;
+    top: 20px;
+  }
+
+  .education-content {
+    padding: 14px 18px;
+  }
+
+  .education-content h3 {
+    font-size: 15px;
+  }
+
+  .education-content p {
+    font-size: 13px;
+  }
+
+  .education-date {
+    font-size: 11px;
+  }
+}
+
+/* Extra small screens (below 480px) */
+@media (max-width: 480px) {
+  .education-section {
+    padding: 50px 14px;
+  }
+
+  .education-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .education-line {
+    left: 16px;
+  }
+
+  .education-item {
+    padding-left: 40px;
+    padding-right: 14px;
+  }
+
+  .education-icon {
+    width: 14px;
+    height: 14px;
+    left: 5px;
+  }
+
+  .education-content {
+    padding: 12px 16px;
+    max-width: 100%;
+  }
+
+  .education-content h3 {
+    font-size: 14px;
+  }
+
+  .education-content p {
+    font-size: 12.5px;
+  }
+
+  .education-date {
+    font-size: 11px;
+  }
+}
+
+/* Ultra small screens (below 360px) */
+@media (max-width: 360px) {
+  .education-item {
+    padding-left: 36px;
+  }
+
+  .education-icon {
+    width: 12px;
+    height: 12px;
+    left: 4px;
+  }
+
+  .education-content {
+    padding: 10px 14px;
+  }
+
+  .education-content h3 {
+    font-size: 13.5px;
+  }
+
+  .education-content p {
+    font-size: 12px;
+  }
+
+  .education-date {
+    font-size: 10.5px;
+  }
+}

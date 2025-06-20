@@ -1,0 +1,121 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background-color: #12001f;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ab87f1;
+}
+/* Hamburger icon hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.nav-logo-icon {
+  width: 35px;
+  height: 35px;
+  margin-right: 12px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(191, 158, 255, 0.3);
+}
+
+.navbar-right {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.navbar-right a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 4px;
+}
+
+.navbar-right a:hover {
+  color: #bf9eff;
+}
+
+/* Active nav link styling */
+.navbar-right a.active {
+  color: #bf9eff;
+  border-bottom: 2px solid #bf9eff;
+}
+
+/* Medium screens (tablet) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+.hamburger {
+    display: block;
+    position: absolute;
+    top: 22px;
+    right: 24px;
+  }
+
+  .navbar-left {
+    font-size: 22px;
+  }
+
+  .navbar-right {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-right a {
+    font-size: 16px;
+  }
+  .navbar-right.open {
+    display: flex;
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 16px;
+  }
+
+  .nav-logo-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+  }
+
+  .navbar-left {
+    font-size: 20px;
+  }
+
+  .navbar-right {
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .navbar-right a {
+    font-size: 15px;
+  }
+}
