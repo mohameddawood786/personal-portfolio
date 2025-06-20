@@ -22,7 +22,7 @@ function HeroSection() {
       <div className="hero-container">
         <div className="hero-left">
           <h3>Hi There 👋</h3>
-          <h1>I&apos;m Mohamed Dawood</h1>
+          <h2>I&apos;m Mohamed Dawood</h2>
           <div className="typing-text">
             <TypeAnimation
   sequence={[

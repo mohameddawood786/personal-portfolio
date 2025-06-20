@@ -38,6 +38,11 @@
   flex: 0.5;
   animation: fadeInLeft 1s ease forwards;
 }
+.hero-left h2 {
+  font-size: 3.3rem;
+  color: #fff;
+  margin: 0 0 20px;
+}
 
 .hero-left h3 {
   font-size: 2rem;
